@@ -15,3 +15,6 @@ for train_index, test_index in split.split(df, df["income_cat"]):
 print(
       start_test_set["income_cat"].value_counts() / len(start_test_set)
       )
+
+for set_ in (start_test_set, start_train_set):
+    set_.drop("income_cat", axis=1, inplace=True)
